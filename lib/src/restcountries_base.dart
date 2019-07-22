@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:meta/meta.dart';
 import 'package:restcountries/src/models/models.dart';
 
 class RestCountries {
@@ -52,14 +51,16 @@ class RestCountries {
         .toList();
   }
 
-  Future<List<Region>> getRegions({@required String countryCode}) async {
+  Future<List<Region>> getRegions({String countryCode}) async {
+    assert(countryCode.isNotEmpty);
     return (await _get("/region/$countryCode/all"))
         .map((data) => Region.fromJsonMap(data))
         .toList();
   }
 
   Future<List<Region>> searchRegion(
-      {String keyword, String city, @required String countryCode}) async {
+      {String keyword, String city, String countryCode}) async {
+    assert(countryCode.isNotEmpty);
     Map<String, String> params = {};
     if (keyword.isNotEmpty) {
       params['region'] = keyword;
@@ -74,7 +75,8 @@ class RestCountries {
   }
 
   Future<List<City>> getCities(
-      {@required String countryCode, String region, String keyword}) async {
+      {String countryCode, String region, String keyword}) async {
+    assert(countryCode.isNotEmpty);
     assert(region.isNotEmpty || keyword.isNotEmpty);
     Map<String, String> params;
     if (keyword.isNotEmpty) {
