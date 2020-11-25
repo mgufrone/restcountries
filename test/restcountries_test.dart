@@ -11,18 +11,18 @@ void main() {
           throwsA(TypeMatcher<AssertionError>()));
     });
     test('Initiate class with empty value', () {
-      expect(() => RestCountries.setup(""),
+      expect(() => RestCountries.setup(''),
           throwsA(TypeMatcher<AssertionError>()));
     });
   });
-  group("Real Test", () {
+  group('Real Test', () {
     RestCountries api;
     setUpAll(() {
-      api = RestCountries.setup("f24f0077c8f07a5ff488cb9f844d4f14");
+      api = RestCountries.setup('f24f0077c8f07a5ff488cb9f844d4f14');
     });
 
     test('get countries', () async {
-      List<Country> countries = await api.getCountries();
+      final countries = await api.getCountries();
       expect(countries.length, greaterThan(0));
       expect(countries.first is Country, equals(true));
     });
