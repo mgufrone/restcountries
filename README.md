@@ -2,6 +2,7 @@ A library to get countries, state/region, and cities.
 
 This library will help you out to get the ease of loading countries, state/regions, and cities from http://battuta.medunes.net.
 So before you use this library, make sure you already have the API key obtained on the website. Once you have that, you shall use this library freely.
+To obtain the key, you could visit http://battuta.medunes.net/ and request key.
 
 ## Usage
 
@@ -33,4 +34,4 @@ main() async {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com:mgufrone/restcountries.git
+[tracker]: https://github.com/mgufrone/restcountries.git
