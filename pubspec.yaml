@@ -1,6 +1,6 @@
 name: restcountries
 description: A library to load countries, states/regions, and cities (source from http://battuta.medunes.net/).
-version: '0.0.2'
+version: '0.0.3'
 homepage: https://github.com/mgufrone/restcountries
 author: gufy <mgufronefendi@gmail.com>
 
